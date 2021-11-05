@@ -1,7 +1,26 @@
+import { Actors } from './Components/Actors';
+import { Infomation } from './Components/Infomation';
+import { Main } from './Components/Main';
+import { FullPage, Slide } from 'react-full-page';
+import { StillCut } from './Components/StillCut';
+
 function App() {
   return (
     <div className="App">
-      <h1>1939 웹페이지 입니다.</h1>
+      <FullPage>
+        <Slide>
+          <Main />
+        </Slide>
+        <Slide>
+          <Infomation />
+        </Slide>
+        <Slide>
+          <Actors />
+        </Slide>
+        <Slide>
+          <StillCut />
+        </Slide>
+      </FullPage>
     </div>
   );
 }
