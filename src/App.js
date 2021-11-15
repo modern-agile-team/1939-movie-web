@@ -3,6 +3,7 @@ import { Infomation } from './Components/Infomation';
 import { Main } from './Components/Main';
 import { FullPage, Slide } from 'react-full-page';
 import { StillCut } from './Components/StillCut';
+import { Video } from './Components/Video';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         </Slide>
         <Slide>
           <StillCut />
+        </Slide>
+        <Slide>
+          <Video />
         </Slide>
       </FullPage>
     </div>

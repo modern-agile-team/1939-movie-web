@@ -12,7 +12,7 @@ const Container = styled.div`
 const StlyedSlider = styled(Slider)`
   .slick-slide div {
     outline: none;
-    width: 25vw;
+    width: 70vw;
   }
   .slick-track div {
     display: flex;
@@ -20,7 +20,7 @@ const StlyedSlider = styled(Slider)`
   }
 `;
 
-const ActorDiv = styled.div`
+const VideoDiv = styled.div`
   text-align: center;
   height: 70vh;
 `;
@@ -33,63 +33,61 @@ const Title = styled.h1`
 const UnDisClosed = styled.div`
   display: flex;
   align-items: center;
-  border-radius: 16px;
-  width: 100%;
-  height: 80%;
   color: white;
   font-size: 400%;
   background-color: lightgray;
+  margin-bottom: 1em;
 `;
-export const Actors = () => {
+export const Video = () => {
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 5,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     arrows: false
   };
 
   return (
     <Container>
-      <Title>등장 인물</Title>
+      <Title>메이킹 필름</Title>
       <StlyedSlider {...settings}>
-        <ActorDiv>
+        <VideoDiv>
           <UnDisClosed>
             <h1>?</h1>
           </UnDisClosed>
-          <h1>등장인물 1</h1>
-        </ActorDiv>
-        <ActorDiv>
+          <h1>메이킹 필름 1</h1>
+        </VideoDiv>
+        <VideoDiv>
           <UnDisClosed>
             <h1>?</h1>
           </UnDisClosed>
-          <h1>등장인물 2</h1>
-        </ActorDiv>
-        <ActorDiv>
+          <h1>메이킹 필름 2</h1>
+        </VideoDiv>
+        <VideoDiv>
           <UnDisClosed>
             <h1>?</h1>
           </UnDisClosed>
-          <h1>등장인물 3</h1>
-        </ActorDiv>
-        <ActorDiv>
+          <h1>메이킹 필름 3</h1>
+        </VideoDiv>
+        <VideoDiv>
           <UnDisClosed>
             <h1>?</h1>
           </UnDisClosed>
-          <h1>등장인물 4</h1>
-        </ActorDiv>
-        <ActorDiv>
+          <h1>메이킹 필름 4</h1>
+        </VideoDiv>
+        <VideoDiv>
           <UnDisClosed>
             <h1>?</h1>
           </UnDisClosed>
-          <h1>등장인물 5</h1>
-        </ActorDiv>
-        <ActorDiv>
+          <h1>메이킹 필름 5</h1>
+        </VideoDiv>
+        <VideoDiv>
           <UnDisClosed>
             <h1>?</h1>
           </UnDisClosed>
-          <h1>등장인물 6</h1>
-        </ActorDiv>
+          <h1>메이킹 필름 6</h1>
+        </VideoDiv>
       </StlyedSlider>
     </Container>
   );
