@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 100vh;
   justify-content: center;
-  background: linear-gradient(rgb(252, 228, 248), rgb(255, 186, 130));
 `;
 
 const Title = styled.h1`
