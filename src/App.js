@@ -4,11 +4,12 @@ import { Main } from './Components/Main';
 import { FullPage, Slide } from 'react-full-page';
 import { StillCut } from './Components/StillCut';
 import { Video } from './Components/Video';
+import { VIDEOS } from './data';
 
 function App() {
   return (
     <div className="App">
-      <FullPage>
+      <FullPage scrollMode="normal">
         <Slide>
           <Main />
         </Slide>
@@ -19,10 +20,10 @@ function App() {
           <Actors />
         </Slide>
         <Slide>
-          <StillCut />
+          <Video images={VIDEOS} />
         </Slide>
         <Slide>
-          <Video />
+          <StillCut />
         </Slide>
       </FullPage>
     </div>
