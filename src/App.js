@@ -4,11 +4,28 @@ import { Main } from './Components/Main';
 import { FullPage, Slide } from 'react-full-page';
 import { StillCut } from './Components/StillCut';
 import { Video } from './Components/Video';
+import { VIDEOS } from './data/data';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [scrollMode, setScrollMode] = useState('full-page');
+
+  const scroll = () => {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 3015) {
+        setScrollMode('normal');
+      } else setScrollMode('full-page');
+    });
+  };
+
+  useEffect(() => {
+    scroll();
+  }, []);
+
   return (
     <div className="App">
-      <FullPage>
+      <FullPage scrollMode={scrollMode}>
         <Slide>
           <Main />
         </Slide>
@@ -19,10 +36,10 @@ function App() {
           <Actors />
         </Slide>
         <Slide>
-          <StillCut />
+          <Video images={VIDEOS} />
         </Slide>
         <Slide>
-          <Video />
+          <StillCut />
         </Slide>
       </FullPage>
     </div>
