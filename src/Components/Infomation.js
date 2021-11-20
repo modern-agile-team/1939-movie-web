@@ -1,33 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Poster = styled.h1`
-  width: 25vw;
-  height: 100%;
+const FlexDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+
+const Poster = styled.div`
+  width: 30vw;
+  height: 90%;
   text-align: center;
   background-color: lightgray;
-  border-radius: 6px;
+  margin-right: 30px;
 `;
 
 const Sinop = styled.div`
-  width: 60vw;
-  height: 100%;
+  width: 55vw;
+  height: 90%;
   text-align: center;
   background-color: lightgray;
-`;
-
-const FlexDiv = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 100px;
-  height: 80vh;
+  h1 {
+    margin-top: 130px;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-size: 36px;
+  }
+  h3 {
+    font-family: 'Noto Sans';
+    font-weight: normal;
+    font-size: 24px;
+  }
+  article {
+    font-family: 'Noto Sans';
+    font-size: 18px;
+    margin-top: 3em;
+    padding: 0 100px;
+  }
 `;
 
 export const Infomation = () => {
   return (
     <FlexDiv>
-      <Poster>포스터</Poster>
+      <Poster />
       <Sinop>
         <h1>SYNOPSIS</h1>
         <h3>줄거리</h3>

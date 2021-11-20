@@ -3,50 +3,82 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import blind from '../data/blind.png';
 
 const Container = styled.div`
   height: 100vh;
-  justify-content: center;
+`;
+
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  h1 {
+    margin: 0;
+    font-family: 'Noto Sans';
+    font-size: 36px;
+  }
+  h3 {
+    font-family: 'Noto Sans';
+    font-weight: normal;
+    font-size: 24px;
+  }
 `;
 
 const StlyedSlider = styled(Slider)`
   .slick-slide div {
-    width: 100vw;
+    width: 100%;
   }
   .slick-track div {
     display: flex;
     justify-content: center;
   }
 `;
-const Title = styled.h1`
-  margin: 0;
-  padding-top: 1rem;
-  text-align: center;
-`;
-
-const SubTitle = styled.h3`
-  text-align: center;
-  margin-bottom: 0;
-`;
 
 const ActorDiv = styled.div`
   display: flex !important;
-  justify-content: space-around !important;
-  margin: 2em;
-  padding: 0 5em;
-  align-items: center;
-  border: 1px solid lightgray;
+  justify-content: center !important;
   height: 70vh;
+  border: 1px solid lightgray;
+  border-right: none;
+  border-left: none;
+`;
+
+const InnerDiv = styled.div`
+  margin: 30px 0;
 `;
 
 const UnDisClosed = styled.div`
-  border-radius: 16px;
-  color: white;
-  width: 35% !important;
-  height: 80%;
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  display: flex;
+  align-items: center;
   font-size: 400%;
-  margin: 0;
-  background-color: lightgray;
+  img {
+    z-index: 9;
+    position: absolute;
+    transition-duration: 1s;
+    background-color: white;
+    width: 25%;
+    &:hover {
+      cursor: pointer;
+      animation: fadeout 1s;
+    }
+  }
+  svg {
+    border: 1px solid lightgray;
+    width: 80%;
+    height: 100%;
+    z-index: 1;
+  }
 `;
 
 const Subscribe = styled.div`
@@ -54,18 +86,30 @@ const Subscribe = styled.div`
   flex-direction: column;
   align-self: flex-end;
   width: 50% !important;
-  padding: 5em 0;
+  height: 100%;
+  margin-left: -30px;
   h2 {
     margin: 0;
+    font-family: 'Noto Sans';
+    font-size: 36px;
   }
   h3 {
+    font-family: 'Noto Sans';
     font-weight: normal;
-    padding-bottom: 1em;
-    border-bottom: 3px solid;
-    width: 10%;
+    font-size: 24px;
   }
   p {
+    font-family: 'Noto Sans';
+    font-size: 18px;
     margin: 0;
+  }
+  hr {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    color: black;
+    margin: 0;
+    margin-bottom: 1em;
   }
 `;
 
@@ -81,74 +125,42 @@ export const Actors = () => {
 
   return (
     <Container>
-      <Title>CHARACTER</Title>
-      <SubTitle>감독 / 출연진 </SubTitle>
+      <Title>
+        <h1>CHARACTER</h1>
+        <h3>감독 / 출연진</h3>
+      </Title>
       <StlyedSlider {...settings}>
         <ActorDiv>
-          <UnDisClosed>?</UnDisClosed>
-          <Subscribe>
-            <h2>정두홍</h2>
-            <h3>감독</h3>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-          </Subscribe>
-        </ActorDiv>
-        <ActorDiv>
-          <UnDisClosed>?</UnDisClosed>
-          <Subscribe>
-            <h2>정두홍</h2>
-            <h3>감독</h3>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-          </Subscribe>
-        </ActorDiv>
-        <ActorDiv>
-          <UnDisClosed>?</UnDisClosed>
-          <Subscribe>
-            <h2>정두홍</h2>
-            <h3>감독</h3>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-          </Subscribe>
-        </ActorDiv>
-        <ActorDiv>
-          <UnDisClosed>?</UnDisClosed>
-          <Subscribe>
-            <h2>정두홍</h2>
-            <h3>감독</h3>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-          </Subscribe>
-        </ActorDiv>
-        <ActorDiv>
-          <UnDisClosed>?</UnDisClosed>
-          <Subscribe>
-            <h2>정두홍</h2>
-            <h3>감독</h3>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-          </Subscribe>
-        </ActorDiv>
-        <ActorDiv>
-          <UnDisClosed>?</UnDisClosed>
-          <Subscribe>
-            <h2>정두홍</h2>
-            <h3>감독</h3>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-            <p>감독 설명을 적는 칸입니다.</p>
-          </Subscribe>
+          <InnerDiv>
+            <UnDisClosed>
+              <img alt="By Made by Made Premium" src={blind} />
+              <PersonOutlinedIcon />
+            </UnDisClosed>
+            <Subscribe>
+              <h2>? ? ?</h2>
+              <h3>감독</h3>
+              <hr />
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+            </Subscribe>
+          </InnerDiv>
+          <InnerDiv>
+            <UnDisClosed>
+              <img alt="By Made by Made Premium" src={blind} />
+              <PersonOutlinedIcon />
+            </UnDisClosed>
+            <Subscribe>
+              <h2>? ? ?</h2>
+              <h3>감독</h3>
+              <hr />
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+            </Subscribe>
+          </InnerDiv>
         </ActorDiv>
       </StlyedSlider>
     </Container>
