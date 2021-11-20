@@ -20,9 +20,9 @@ const StlyedSlider = styled(Slider)`
     justify-content: center;
   }
 `;
-const Title = styled.h1`
+const Title = styled.div`
   margin: 0;
-  padding: 3rem 0;
+  padding-top: 3rem;
   text-align: center;
 `;
 
@@ -37,6 +37,26 @@ const SlideWraper = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+const TemplateImages = ({ image, imageIndex, idx }) => {
+  return (
+    <>
+      {idx === imageIndex ? (
+        <div key={image.id}>
+          <SlideWraper>
+            {image.code ? image.code : <img src={image.src} alt={image.alt} />}
+          </SlideWraper>
+        </div>
+      ) : (
+        <Slide key={image.id}>
+          <SlideWraper>
+            {image.code ? image.code : <img src={image.src} alt={image.alt} />}
+          </SlideWraper>
+        </Slide>
+      )}
+    </>
+  );
+};
 
 export const Video = ({ images, slidesToShow = 3 }) => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -69,38 +89,24 @@ export const Video = ({ images, slidesToShow = 3 }) => {
     ]
   };
 
-  const templateImages = images.map((image, idx) => {
-    return (
-      <>
-        {idx === imageIndex ? (
-          <div key={image.id}>
-            <div className="slideWrapper">
-              {image.code ? (
-                image.code
-              ) : (
-                <img src={image.src} alt={image.alt} />
-              )}
-            </div>
-          </div>
-        ) : (
-          <Slide key={image.id}>
-            <SlideWraper>
-              {image.code ? (
-                image.code
-              ) : (
-                <img src={image.src} alt={image.alt} />
-              )}
-            </SlideWraper>
-          </Slide>
-        )}
-      </>
-    );
-  });
-
   return (
     <Container>
-      <Title>메이킹 필름</Title>
-      <StlyedSlider {...settings}>{templateImages}</StlyedSlider>
+      <Title>
+        <h1>TRAILER</h1>
+        <h3>메이킹 필름</h3>
+      </Title>
+      <StlyedSlider {...settings}>
+        {images.map((image, idx) => {
+          return (
+            <TemplateImages
+              key={image.id}
+              image={image}
+              imageIndex={imageIndex}
+              idx={idx}
+            />
+          );
+        })}
+      </StlyedSlider>
     </Container>
   );
 };

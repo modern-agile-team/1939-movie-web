@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { itemData } from '../imageData';
+import { itemData } from '../data/imageData';
 
 const srcset = (image, size, rows = 1, cols = 1) => {
   return {
@@ -39,13 +39,9 @@ export const StillCut = () => {
         <h1>GALLERY</h1>
         <h3>스틸컷</h3>
       </Title>
-      <ImageDiv sx={{ width: `90vw` }} variant="masonry" cols={3} gap={8}>
+      <ImageDiv sx={{ width: `90vw` }} variant="masonry" cols={3} gap={10}>
         {itemData.map((item) => (
-          <ImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
+          <ImageListItem key={item.img}>
             <img
               {...srcset(item.img, 1024, item.rows, item.cols)}
               alt={item.title}
