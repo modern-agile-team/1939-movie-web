@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 
 const Container = styled.div`
   height: 100vh;
   justify-content: center;
-  padding: 0 3em;
+  padding: 0 100px;
 `;
 
 const StlyedSlider = styled(Slider)`
+  border: 1px solid #768695;
+  padding: 100px 50px;
   .slick-slide div {
     outline: none;
     width: 70vw;
@@ -22,12 +25,23 @@ const StlyedSlider = styled(Slider)`
 `;
 const Title = styled.div`
   margin: 0;
-  padding-top: 3rem;
   text-align: center;
+  font-family: 'Noto Sans';
+  h1 {
+    font-size: 36px;
+    color: #0054a1;
+    margin: 0;
+    margin-top: -40px;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: normal;
+    color: #768695;
+  }
 `;
 
 const Slide = styled.div`
-  transform: scale(0.7);
+  transform: scale(0.5);
   transition: transform 300ms;
   opacity: 0.5;
   z-index: -1;
@@ -38,19 +52,47 @@ const SlideWraper = styled.div`
   justify-content: center;
 `;
 
-const TemplateImages = ({ image, imageIndex, idx }) => {
+const VideoDiv = styled.div`
+  display: flex;
+  align-items: center;
+  width: 1024px !important;
+  height: 550px;
+  background-color: ${(props) => props.color};
+  svg {
+    border-radius: 16px;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    padding: 10px 20px;
+    color: lightgray;
+  }
+`;
+
+const TemplateImages = ({ image, imageIndex, idx, color }) => {
   return (
     <>
       {idx === imageIndex ? (
         <div key={image.id}>
           <SlideWraper>
-            {image.code ? image.code : <img src={image.src} alt={image.alt} />}
+            {image.code ? (
+              image.code
+            ) : (
+              <VideoDiv color={color}>
+                <PlayArrowRoundedIcon />
+              </VideoDiv>
+            )}
           </SlideWraper>
         </div>
       ) : (
         <Slide key={image.id}>
           <SlideWraper>
-            {image.code ? image.code : <img src={image.src} alt={image.alt} />}
+            {image.code ? (
+              image.code
+            ) : (
+              <VideoDiv color={color}>
+                <PlayArrowRoundedIcon />
+              </VideoDiv>
+            )}
           </SlideWraper>
         </Slide>
       )}
@@ -103,6 +145,7 @@ export const Video = ({ images, slidesToShow = 3 }) => {
               image={image}
               imageIndex={imageIndex}
               idx={idx}
+              color={idx % 2 === 0 ? 'lightgray' : '#0054a1'}
             />
           );
         })}

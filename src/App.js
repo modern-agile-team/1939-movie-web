@@ -4,7 +4,7 @@ import { Main } from './Components/Main';
 import { FullPage, Slide } from 'react-full-page';
 import { StillCut } from './Components/StillCut';
 import { Video } from './Components/Video';
-import { VIDEOS } from './data/data';
+import { VIDEOS } from './data/videoDatas';
 import { useState, useEffect } from 'react';
 
 function App() {

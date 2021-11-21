@@ -19,11 +19,13 @@ const Title = styled.div`
     margin: 0;
     font-family: 'Noto Sans';
     font-size: 36px;
+    color: #0054a1;
   }
   h3 {
     font-family: 'Noto Sans';
     font-weight: normal;
     font-size: 24px;
+    color: #768695;
   }
 `;
 
@@ -92,22 +94,25 @@ const Subscribe = styled.div`
     margin: 0;
     font-family: 'Noto Sans';
     font-size: 36px;
+    color: #001f3c;
   }
   h3 {
     font-family: 'Noto Sans';
     font-weight: normal;
     font-size: 24px;
+    color: #768695;
   }
   p {
     font-family: 'Noto Sans';
     font-size: 18px;
     margin: 0;
+    color: #768695;
   }
   hr {
     width: 30px;
     height: 3px;
-    background-color: black;
-    color: black;
+    background-color: #001f3c;
+    color: #001f3c;
     margin: 0;
     margin-bottom: 1em;
   }

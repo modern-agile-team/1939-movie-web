@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PlayCircleFilledRoundedIcon from '@mui/icons-material/PlayCircleFilledRounded';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 
 const Container = styled.div`
   height: 100vh;
@@ -9,10 +9,14 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background-size: cover;
-  background-color: gray;
+  background-color: lightgray;
   svg {
-    width: 150px;
-    height: 150px;
+    border-radius: 16px;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    padding: 10px 20px;
+    color: lightgray;
   }
 `;
 
@@ -24,7 +28,7 @@ export const Main = () => {
   return (
     <div>
       <Container>
-        <PlayCircleFilledRoundedIcon />
+        <PlayArrowRoundedIcon />
         <Logo>19인 너 39에 난</Logo>
       </Container>
     </div>

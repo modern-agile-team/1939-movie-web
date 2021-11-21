@@ -28,7 +28,6 @@ const Title = styled.div`
     margin: 0;
   }
   margin: 0;
-  padding-top: 3rem;
   text-align: center;
 `;
 
