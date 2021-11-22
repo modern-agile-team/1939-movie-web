@@ -14,7 +14,7 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 5vh;
   h1 {
     margin: 0;
     font-family: 'Noto Sans';
@@ -49,7 +49,7 @@ const ActorDiv = styled.div`
 `;
 
 const InnerDiv = styled.div`
-  margin: 30px 0;
+  margin: 2em 0;
 `;
 
 const UnDisClosed = styled.div`
@@ -69,11 +69,11 @@ const UnDisClosed = styled.div`
     position: absolute;
     transition-duration: 1s;
     background-color: white;
-    width: 25%;
     &:hover {
       cursor: pointer;
       animation: fadeout 1s;
     }
+    width: 5%;
   }
   svg {
     border: 1px solid lightgray;
@@ -135,6 +135,38 @@ export const Actors = () => {
         <h3>감독 / 출연진</h3>
       </Title>
       <StlyedSlider {...settings}>
+        <ActorDiv>
+          <InnerDiv>
+            <UnDisClosed>
+              <img alt="By Made by Made Premium" src={blind} />
+              <PersonOutlinedIcon />
+            </UnDisClosed>
+            <Subscribe>
+              <h2>? ? ?</h2>
+              <h3>감독</h3>
+              <hr />
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+            </Subscribe>
+          </InnerDiv>
+          <InnerDiv>
+            <UnDisClosed>
+              <img alt="By Made by Made Premium" src={blind} />
+              <PersonOutlinedIcon />
+            </UnDisClosed>
+            <Subscribe>
+              <h2>? ? ?</h2>
+              <h3>감독</h3>
+              <hr />
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+              <p>설명을 적는 칸입니다.</p>
+            </Subscribe>
+          </InnerDiv>
+        </ActorDiv>
         <ActorDiv>
           <InnerDiv>
             <UnDisClosed>

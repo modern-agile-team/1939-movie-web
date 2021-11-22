@@ -8,15 +8,15 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 const Container = styled.div`
   height: 100vh;
   justify-content: center;
-  padding: 0 100px;
+  padding: 0 5vw;
+  margin-top: 5vh;
 `;
 
 const StlyedSlider = styled(Slider)`
   border: 1px solid #768695;
-  padding: 100px 50px;
+  padding: 10vh 6vw;
   .slick-slide div {
     outline: none;
-    width: 70vw;
   }
   .slick-track div {
     display: flex;
@@ -41,7 +41,7 @@ const Title = styled.div`
 `;
 
 const Slide = styled.div`
-  transform: scale(0.5);
+  transform: scale(0.6);
   transition: transform 300ms;
   opacity: 0.5;
   z-index: -1;
@@ -55,14 +55,14 @@ const SlideWraper = styled.div`
 const VideoDiv = styled.div`
   display: flex;
   align-items: center;
-  width: 1024px !important;
-  height: 550px;
+  width: 40vw !important;
+  height: 50vh;
   background-color: ${(props) => props.color};
   svg {
     border-radius: 16px;
     background-color: white;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     padding: 10px 20px;
     color: lightgray;
   }

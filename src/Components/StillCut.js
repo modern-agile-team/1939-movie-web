@@ -13,6 +13,14 @@ const srcset = (image, size, rows = 1, cols = 1) => {
   };
 };
 
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  transform: rotate(
+    ${(props) => (props.sign > 0.5 ? '-' : '')}${(props) => props.rotate}deg
+  ) !important;
+`;
+
 const ImageDiv = styled(ImageList)`
   margin: 0 auto;
   margin-top: 1em;
@@ -25,7 +33,16 @@ const Container = styled.div`
 
 const Title = styled.div`
   h1 {
-    margin: 0;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-size: 36px;
+    color: #0054a1;
+  }
+  h3 {
+    font-family: 'Noto Sans';
+    font-weight: normal;
+    font-size: 24px;
+    color: #768695;
   }
   margin: 0;
   text-align: center;
@@ -38,10 +55,10 @@ export const StillCut = () => {
         <h1>GALLERY</h1>
         <h3>스틸컷</h3>
       </Title>
-      <ImageDiv sx={{ width: `90vw` }} variant="masonry" cols={3} gap={10}>
+      <ImageDiv sx={{ width: `90vw` }} variant="masonry" cols={3} gap={30}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
-            <img
+            <Image
               {...srcset(item.img, 1024, item.rows, item.cols)}
               alt={item.title}
               loading="lazy"
