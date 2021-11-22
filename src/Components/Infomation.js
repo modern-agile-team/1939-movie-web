@@ -20,17 +20,19 @@ const Sinop = styled.div`
   width: 55vw;
   height: 90%;
   text-align: center;
-  background-color: lightgray;
+  background-color: #f1f7ff;
   h1 {
     margin-top: 130px;
     font-family: 'Noto Sans';
     font-weight: bold;
     font-size: 36px;
+    color: #0054a1;
   }
   h3 {
     font-family: 'Noto Sans';
     font-weight: normal;
     font-size: 24px;
+    color: #768695;
   }
   article {
     font-family: 'Noto Sans';
