@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { itemData } from '../data/imageData';
+import { itemData } from '../../data/imageData';
 
 const srcset = (image, size, rows = 1, cols = 1) => {
   return {

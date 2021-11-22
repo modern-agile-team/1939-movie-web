@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import blind from '../data/blind.png';
+import blind from '../../data/blind.png';
 
 const Container = styled.div`
   height: 100vh;
