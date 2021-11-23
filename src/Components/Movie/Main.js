@@ -24,10 +24,6 @@ const Container = styled.div`
   }
 `;
 
-const Logo = styled.h1`
-  font-size: 70px;
-`;
-
 export const Main = () => {
   return (
     <div>
