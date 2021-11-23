@@ -8,13 +8,11 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 const Container = styled.div`
   height: 100vh;
   justify-content: center;
-  padding: 0 5vw;
-  margin-top: 5vh;
+  padding: 10vh 5vw;
+  background: linear-gradient(to Bottom, #d7e0de, #f4f1e4);
 `;
 
 const StlyedSlider = styled(Slider)`
-  border: 1px solid #768695;
-  padding: 10vh 6vw;
   .slick-slide div {
     outline: none;
   }
@@ -29,14 +27,13 @@ const Title = styled.div`
   font-family: 'Noto Sans';
   h1 {
     font-size: 36px;
-    color: #0054a1;
     margin: 0;
     margin-top: -40px;
   }
   h3 {
     font-size: 24px;
     font-weight: normal;
-    color: #768695;
+    color: gray;
   }
 `;
 
