@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import background from '../../data/background.jpg';
 
 const Container = styled.div`
   height: 100vh;
@@ -9,7 +9,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background-size: cover;
-  background-color: lightgray;
   svg {
     border-radius: 16px;
     background-color: white;
@@ -18,18 +17,18 @@ const Container = styled.div`
     padding: 10px 20px;
     color: lightgray;
   }
-`;
-
-const Logo = styled.h1`
-  font-size: 70px;
+  img {
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 export const Main = () => {
   return (
     <div>
       <Container>
-        <PlayArrowRoundedIcon />
-        <Logo>19인 너 39에 난</Logo>
+        <img alt="포스터" src={background} />
       </Container>
     </div>
   );
