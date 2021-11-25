@@ -16,19 +16,15 @@ const srcset = (image, size, rows = 1, cols = 1) => {
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  transform: rotate(
-    ${(props) => (props.sign > 0.5 ? '-' : '')}${(props) => props.rotate}deg
-  ) !important;
 `;
 
 const ImageDiv = styled(ImageList)`
   margin: 0 auto;
-  margin-top: 1em;
-  border-radius: 3px;
 `;
 
 const Container = styled.div`
   justify-content: center;
+  background: linear-gradient(to Bottom, #f4f1e4, #f5e4b9);
 `;
 
 const Title = styled.div`
@@ -36,13 +32,14 @@ const Title = styled.div`
     font-family: 'Noto Sans';
     font-weight: bold;
     font-size: 36px;
-    color: #0054a1;
+    margin: 0;
+    padding-top: 5vh;
   }
   h3 {
     font-family: 'Noto Sans';
     font-weight: normal;
     font-size: 24px;
-    color: #768695;
+    color: gray;
   }
   margin: 0;
   text-align: center;
@@ -55,7 +52,7 @@ export const StillCut = () => {
         <h1>GALLERY</h1>
         <h3>스틸컷</h3>
       </Title>
-      <ImageDiv sx={{ width: `90vw` }} variant="masonry" cols={3} gap={30}>
+      <ImageDiv sx={{ width: `80vw` }} variant="masonry" cols={3} gap={30}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <Image

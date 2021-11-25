@@ -3,18 +3,19 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import blind from '../../data/blind.png';
+import person from '../../data/person.png';
 
 const Container = styled.div`
   height: 100vh;
+  background: linear-gradient(to Bottom, #bbd1d8, #d7e0de);
 `;
 
 const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5vh;
+  padding-top: 5vh;
   h1 {
     margin: 0;
     font-family: 'Noto Sans';
@@ -43,16 +44,17 @@ const ActorDiv = styled.div`
   display: flex !important;
   justify-content: center !important;
   height: 70vh;
-  border: 1px solid lightgray;
   border-right: none;
   border-left: none;
 `;
 
 const InnerDiv = styled.div`
-  margin: 2em 0;
+  padding: 0 5em;
 `;
 
 const UnDisClosed = styled.div`
+  display: flex;
+  justify-content: flex-start !important;
   @keyframes fadeout {
     from {
       opacity: 1;
@@ -61,24 +63,18 @@ const UnDisClosed = styled.div`
       opacity: 0;
     }
   }
-  display: flex;
-  align-items: center;
   font-size: 400%;
-  img {
+  .blind {
     z-index: 9;
     position: absolute;
     transition-duration: 1s;
-    background-color: white;
     &:hover {
       cursor: pointer;
       animation: fadeout 1s;
     }
     width: 5%;
   }
-  svg {
-    border: 1px solid lightgray;
-    width: 80%;
-    height: 100%;
+  .person {
     z-index: 1;
   }
 `;
@@ -87,25 +83,24 @@ const Subscribe = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  width: 50% !important;
-  height: 100%;
-  margin-left: -30px;
+  width: 100% !important;
+  margin-left: 2em;
   h2 {
     margin: 0;
     font-family: 'Noto Sans';
-    font-size: 36px;
+    font-size: 28px;
     color: #001f3c;
   }
   h3 {
     font-family: 'Noto Sans';
     font-weight: normal;
-    font-size: 24px;
+    font-size: 19px;
     color: #768695;
   }
   p {
     font-family: 'Noto Sans';
-    font-size: 18px;
-    margin: 0;
+    font-size: 14px;
+    margin: 5px 0;
     color: #768695;
   }
   hr {
@@ -138,40 +133,52 @@ export const Actors = () => {
         <ActorDiv>
           <InnerDiv>
             <UnDisClosed>
-              <img alt="By Made by Made Premium" src={blind} />
-              <PersonOutlinedIcon />
+              {/* <img className="blind" alt="blind" src={blind} /> */}
+              <img
+                className="person"
+                alt="person"
+                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzAxMjNfMjk2%2FMDAxNDg1MTc0MTQ1NzA3.zfKZJeFL6IcIDTqcy6zyVewZ30mhD6s0lE8DjLKQugUg.bpzQhpQ4VFjtmxZX6nskwAusXQfkJbHaJwy4gZNLR60g.JPEG.camoju%2F03_01.jpg&type=sc960_832"
+              />
             </UnDisClosed>
             <Subscribe>
-              <h2>? ? ?</h2>
+              <h2>데이미언 셔젤</h2>
               <h3>감독</h3>
               <hr />
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
+              <p>2017년 제89회 아카데미 시상식 감독상</p>
+              <p>2017년 제74회 골든 글로브 시상식 감독상</p>
+              <p> 2017년 제74회 골든 글로브 시상식 각본상</p>
+              <p>2017년 제69회 미국 감독 조합상 영화부문 감독상</p>
             </Subscribe>
           </InnerDiv>
           <InnerDiv>
             <UnDisClosed>
-              <img alt="By Made by Made Premium" src={blind} />
-              <PersonOutlinedIcon />
+              {/* <img className="blind" alt="blind" src={blind} /> */}
+              <img
+                className="person"
+                alt="person"
+                src="https://i.pinimg.com/564x/bf/70/a9/bf70a92ddd087da3d8a71d0ae485fed5.jpg"
+              />
             </UnDisClosed>
             <Subscribe>
-              <h2>? ? ?</h2>
-              <h3>감독</h3>
+              <h2>라이언 고슬링</h2>
+              <h3>주연</h3>
               <hr />
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
+              <p>
+                2017년 제74회 골든 글로브 시상식 뮤지컬코미디부문 남우주연상
+              </p>
+              <p>2011년 제16회 새틀라이트 어워즈 영화부문 남우주연상</p>
+              <p>
+                2007년 제12회 새틀라이트 어워즈 코미디, 뮤지컬 영화부문
+                남우주연상
+              </p>
             </Subscribe>
           </InnerDiv>
         </ActorDiv>
         <ActorDiv>
           <InnerDiv>
             <UnDisClosed>
-              <img alt="By Made by Made Premium" src={blind} />
-              <PersonOutlinedIcon />
+              <img className="blind" alt="blind" src={blind} />
+              <img className="person" alt="person" src={person} />
             </UnDisClosed>
             <Subscribe>
               <h2>? ? ?</h2>
@@ -185,8 +192,8 @@ export const Actors = () => {
           </InnerDiv>
           <InnerDiv>
             <UnDisClosed>
-              <img alt="By Made by Made Premium" src={blind} />
-              <PersonOutlinedIcon />
+              <img className="blind" alt="blind" src={blind} />
+              <img className="person" alt="person" src={person} />
             </UnDisClosed>
             <Subscribe>
               <h2>? ? ?</h2>

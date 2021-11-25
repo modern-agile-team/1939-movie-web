@@ -5,6 +5,7 @@ const FlexDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to Bottom, #93c8da, #bbd1d8);
   height: 100vh;
 `;
 
@@ -12,15 +13,18 @@ const Poster = styled.div`
   width: 30vw;
   height: 90%;
   text-align: center;
-  background-color: lightgray;
+  background-color: black;
   margin-right: 30px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const Sinop = styled.div`
   width: 55vw;
   height: 90%;
   text-align: center;
-  background-color: #f1f7ff;
   h1 {
     margin-top: 130px;
     font-family: 'Noto Sans';
@@ -45,7 +49,12 @@ const Sinop = styled.div`
 export const Infomation = () => {
   return (
     <FlexDiv>
-      <Poster />
+      <Poster>
+        <img
+          alt="포스터"
+          src="https://i.pinimg.com/564x/3b/51/f6/3b51f6778b2bacb266ca8ce21bfac809.jpg"
+        />
+      </Poster>
       <Sinop>
         <h1>SYNOPSIS</h1>
         <h3>줄거리</h3>
