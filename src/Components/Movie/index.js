@@ -1,12 +1,12 @@
 import { FullPage, Slide } from 'react-full-page';
 import { VIDEOS } from '../../data/videoDatas';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Main } from './Main';
 import { Infomation } from './Infomation';
-import { Actors } from './Actors';
 import { Video } from './Video';
 import { StillCut } from './StillCut';
 import styled from 'styled-components';
+import Character from './Character';
 
 const Wrap = styled.div`
   .full-page-controls {
@@ -31,6 +31,12 @@ const Wrap = styled.div`
       :nth-last-child(1) {
         display: none;
       }
+      transition: 1s;
+    }
+    button:after {
+      right: 30px;
+      position: absolute;
+      content: ${(props) => props.content};
     }
   }
 `;
@@ -41,18 +47,20 @@ const Movie = () => {
   const scroll = () => {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      if (scrollY > 3015) {
-        setScrollMode('normal');
-      } else setScrollMode('full-page');
+      const clientHeight = document.documentElement.clientHeight;
+      if (scrollY >= clientHeight * 4) setScrollMode('normal');
+      if (scrollY < clientHeight * 4) setScrollMode('full-page');
     });
   };
+
+  const ref = useRef();
 
   useEffect(() => {
     scroll();
   }, []);
 
   return (
-    <Wrap>
+    <Wrap ref={ref}>
       <FullPage controls duration={500} scrollMode={scrollMode}>
         <Slide>
           <Main />
@@ -61,7 +69,7 @@ const Movie = () => {
           <Infomation />
         </Slide>
         <Slide>
-          <Actors />
+          <Character />
         </Slide>
         <Slide>
           <Video images={VIDEOS} />

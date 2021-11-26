@@ -54,7 +54,6 @@ const InnerDiv = styled.div`
 
 const UnDisClosed = styled.div`
   display: flex;
-  justify-content: flex-start !important;
   @keyframes fadeout {
     from {
       opacity: 1;
@@ -72,7 +71,6 @@ const UnDisClosed = styled.div`
       cursor: pointer;
       animation: fadeout 1s;
     }
-    width: 5%;
   }
   .person {
     z-index: 1;
@@ -82,25 +80,23 @@ const UnDisClosed = styled.div`
 const Subscribe = styled.div`
   display: flex;
   flex-direction: column;
-  align-self: flex-end;
-  width: 100% !important;
-  margin-left: 2em;
+  padding: 0 2em;
   h2 {
     margin: 0;
     font-family: 'Noto Sans';
-    font-size: 28px;
+    font-size: 200%;
     color: #001f3c;
   }
   h3 {
     font-family: 'Noto Sans';
     font-weight: normal;
-    font-size: 19px;
+    font-size: 120%;
     color: #768695;
   }
   p {
     font-family: 'Noto Sans';
-    font-size: 14px;
-    margin: 5px 0;
+    font-size: 100%;
+    margin: 7px 0;
     color: #768695;
   }
   hr {
@@ -113,7 +109,7 @@ const Subscribe = styled.div`
   }
 `;
 
-export const Actors = () => {
+const Character = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -133,7 +129,6 @@ export const Actors = () => {
         <ActorDiv>
           <InnerDiv>
             <UnDisClosed>
-              {/* <img className="blind" alt="blind" src={blind} /> */}
               <img
                 className="person"
                 alt="person"
@@ -152,7 +147,6 @@ export const Actors = () => {
           </InnerDiv>
           <InnerDiv>
             <UnDisClosed>
-              {/* <img className="blind" alt="blind" src={blind} /> */}
               <img
                 className="person"
                 alt="person"
@@ -184,10 +178,6 @@ export const Actors = () => {
               <h2>? ? ?</h2>
               <h3>감독</h3>
               <hr />
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
             </Subscribe>
           </InnerDiv>
           <InnerDiv>
@@ -199,10 +189,6 @@ export const Actors = () => {
               <h2>? ? ?</h2>
               <h3>감독</h3>
               <hr />
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
-              <p>설명을 적는 칸입니다.</p>
             </Subscribe>
           </InnerDiv>
         </ActorDiv>
@@ -210,3 +196,5 @@ export const Actors = () => {
     </Container>
   );
 };
+
+export default Character;
