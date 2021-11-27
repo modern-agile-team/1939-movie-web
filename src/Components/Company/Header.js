@@ -3,9 +3,8 @@ import styled from 'styled-components';
 const Container = styled.header`
   display: flex;
   justify-content: center;
-  margin-top: 50px;
   h1 {
-    color: #0054a1;
+    color: white;
   }
 `;
 
