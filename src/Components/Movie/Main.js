@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import background from '../../data/background.jpg';
+import ScrollAnimation from './ScrollAnimation';
 
 const Container = styled.div`
   height: 100vh;
@@ -29,6 +30,7 @@ export const Main = () => {
     <div>
       <Container>
         <img alt="포스터" src={background} />
+        <ScrollAnimation />
       </Container>
     </div>
   );
