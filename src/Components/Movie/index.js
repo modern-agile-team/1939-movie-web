@@ -61,7 +61,7 @@ const Movie = () => {
 
   return (
     <Wrap ref={ref}>
-      <FullPage controls duration={500} scrollMode={scrollMode}>
+      <FullPage controls duration={1000} scrollMode={scrollMode}>
         <Slide>
           <Main />
         </Slide>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Footer from './Footer';
 
 const Container = styled.div`
-  margin-top: 70px;
+  margin-top: 100px;
   align-items: center;
 `;
 
@@ -11,8 +11,8 @@ const Title = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  background-color: #262626;
-  width: 70%;
+  background-color: #768796;
+  width: 80%;
   h1 {
     margin: 100px 0;
   }
@@ -32,7 +32,7 @@ const Description = styled.div`
   describe {
     font-family: 'Noto sans';
     color: #768695;
-    width: 70%;
+    width: 80%;
   }
 `;
 
@@ -47,7 +47,7 @@ const Summary = styled.div`
     border-bottom: 3px solid #0054a1;
   }
   table {
-    width: 70%;
+    width: 80%;
     border-top: 3px solid #768695;
     border-bottom: 3px solid #768695;
     tr {
