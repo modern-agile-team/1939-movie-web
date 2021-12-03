@@ -3,7 +3,7 @@ import TopBar from './TopBar';
 import background from '../../data/background.jpg';
 import { useState } from 'react';
 import Greeting from './Greeting';
-import BasicInfo from './BasicInfo';
+import Organization from './Organization ';
 
 const Wrap = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ const Contents = ({ changeMenu }) => {
     case 1:
       return <Greeting />;
     case 2:
-      return <BasicInfo />;
+      return <Organization />;
     default:
       return <ImageWrap />;
   }
